@@ -95,7 +95,7 @@ def main(args):
                          project='maddpg_noise',
                          entity=all_args.user_name,
                          notes=socket.gethostname(),
-                         name='flipagentnum_'+str(all_args.num_agents)+'loss'+str(all_args.use_sym_loss)+'_aug_'+str(all_args.data_aug)+'_seed_'+str(all_args.seed)+'ucbl1_'+str(all_args.first_aug)+'_ucb2_'+str(all_args.second_aug),
+                         name='imp_'+str(all_args.ipt)+'mu_'+str(all_args.mu)+'_sigma_'+str(all_args.sigma)+'_agentnum_'+str(all_args.num_agents)+'loss'+str(all_args.use_sym_loss)+'_aug_'+str(all_args.data_aug)+'_seed_'+str(all_args.seed)+'ucbl1_'+str(all_args.first_aug)+'_ucb2_'+str(all_args.second_aug),
                          group=all_args.scenario_name,
                          dir=str(run_dir),
                          job_type="training",
@@ -163,7 +163,7 @@ def main(args):
         raise NotImplementedError
 
     # origin_qval = np.load('originQ.npy')
-    origin_qval = np.load('/home/admire/off-policy/offpolicy/scripts/originQ.npy')
+    origin_qval = np.load('D:\\tnnls\\off-policy\\offpolicy\\scripts\\originQ.npy')
     
     
 
@@ -229,6 +229,12 @@ if __name__ == "__main__":
                 '--use_reward_normalization',
                 '--sym_ipt',
                 '0.1',
-                '--use_wandb']
+                '--use_wandb',
+                'dynamic_noise',
+                'Ture',
+                '--mu',
+                '10',
+                '--sigma',
+                '10']
     main(sys.argv[1:])
 

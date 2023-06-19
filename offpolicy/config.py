@@ -207,5 +207,9 @@ def get_config():
     parser.add_argument("--resetNum", default=False, help="Wether to reset the number of ucb-arm selected time when a period is over")
     parser.add_argument("--use_Q", default=False, help="Use the original Q value or not")
 
+    #data_noise
+    parser.add_argument("--dynamic_noise", default=True)
+    parser.add_argument("--mu", type=float, default=1.0, help="noise_mu")
+    parser.add_argument("--sigma", type=float, default=1.0, help="noise_sigma")
     
     return parser

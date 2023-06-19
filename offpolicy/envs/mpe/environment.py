@@ -33,6 +33,9 @@ class MultiAgentEnv(gym.Env):
         self.done_callback = done_callback
 
         self.post_step_callback = post_step_callback
+        
+
+       
 
         # environment parameters
         # self.discrete_action_space = True

@@ -138,7 +138,9 @@ class World(object):
         self.world_step = 0
         self.num_agents = 0
         self.num_landmarks = 0
-
+        self.mu=0
+        self.sigma=0
+        self.u_noise=True
     # return all entities in the world
     @property
     def entities(self):
@@ -231,7 +233,7 @@ class World(object):
             if agent.movable:
                 #random_number = np.random.randn() * std_dev + mean
                 noise = np.random.randn(
-                    *agent.action.u.shape) * 0.5+0.5 if agent.u_noise else 0.0
+                    *agent.action.u.shape) * self.mu+self.sigma if self.u_noise else 0.0
                 # force = mass * a * action + n
                 p_force[i] = (
                     agent.mass * agent.accel if agent.accel is not None else agent.mass) * agent.action.u + noise

@@ -12,6 +12,10 @@ class Scenario(BaseScenario):
         world.num_agents = args.num_agents
         world.num_landmarks = args.num_landmarks  # 3
         world.collaborative = True
+        world.mu=args.mu
+        world.sigma=args.sigma
+        world.u_noise=args.dynamic_noise
+        
         # add agents
         world.agents = [Agent() for i in range(world.num_agents)]
         for i, agent in enumerate(world.agents):
