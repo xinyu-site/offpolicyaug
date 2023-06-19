@@ -1,0 +1,3 @@
+log/*  
+offpolicy/scripts/results/*
+offpolicy/scripts/wandb/*
